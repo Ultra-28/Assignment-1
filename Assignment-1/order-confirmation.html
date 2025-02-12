@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Healthy Eats</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Order Confirmed ✅</h1>
+    </header>
+
+    <section id="confirmation">
+        <h2>Thank You for Your Order!</h2>
+        <p>Your order has been successfully placed. Below is a summary of your order.</p>
+
+        <h3>Order Summary</h3>
+        <ul id="order-summary"></ul>
+
+        <h3>Total Amount: $<span id="order-total">0</span></h3>
+
+        <p>A confirmation email will be sent to you shortly with your order details.</p>
+
+        <a href="index.html" class="cta-button">Back to Home</a>
+    </section>
+
+    <script>
+        // Retrieve order details from localStorage
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let orderSummary = document.getElementById("order-summary");
+        let totalAmount = 0;
+
+        cart.forEach(item => {
+            let li = document.createElement("li");
+            li.textContent = `${item.name} - $${item.price} x ${item.quantity}`;
+            orderSummary.appendChild(li);
+            totalAmount += item.price * item.quantity;
+        });
+
+        document.getElementById("order-total").textContent = totalAmount;
+
+        // Clear the cart after confirming order
+        localStorage.removeItem("cart");
+    </script>
+</body>
+</html>

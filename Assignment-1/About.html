@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Ultra Eats</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Ultra Eats</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#reviews">Reviews</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about-us">
+        <h2>About Ultra Eats</h2>
+        <p>At Ultra Eats, our mission is to provide fresh, organic, and nutritious meals to promote a healthier lifestyle. We carefully source our ingredients to ensure quality, sustainability, and taste. Whether you're looking for healthy meal plans, snacks, or fresh juices, we've got you covered.</p>
+        
+        <h3>Why Choose Us?</h3>
+        <ul>
+            <li>Fresh, locally sourced ingredients</li>
+            <li>Customizable meal plans for all dietary needs</li>
+            <li>Convenient delivery options</li>
+            <li>Affordable, high-quality nutrition</li>
+        </ul>
+    </section>
+
+    <section id="gallery">
+        <h2>Our Healthy Food Gallery</h2>
+        <div class="gallery-container">
+            <div class="image-tab active" onclick="showImage('img1')">
+                <img src="images/Fresh-salad.jpg">
+            </div>
+            <div class="image-tab" onclick="showImage('img2')">
+                <img src="images/Salmon.jpg">
+            </div>
+            <div class="image-tab" onclick="showImage('img3')">
+                <img src="images/Oatmeal.jpg">
+            </div>
+            <div class="image-tab" onclick="showImage('img4')">
+                <img src="images/Smoothie.webp">
+            </div>
+        </div>
+        <div id="image-display">
+            <img id="main-image" src="images/food1.jpg" alt="Featured Healthy Food">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Healthy Eats. All rights reserved.</p>
+        <p>Contact: info@healthyeats.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews - Healthy Eats</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Healthy Eats</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="cart.html">Cart 🛒 (<span id="cart-count">0</span>)</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="reviews.html" class="active">Reviews</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="reviews">
+        <h2>Customer Reviews</h2>
+        <p>We value your feedback! Read reviews from our customers or leave your own review.</p>
+
+        <div class="reviews-container" id="review-list">
+            <div class="review">
+                <p>"The food is fresh and delicious! Highly recommend the meal plans." – <strong>Jane D.</strong></p>
+                <p>⭐️⭐️⭐️⭐️⭐️</p>
+            </div>
+            <div class="review">
+                <p>"Healthy Eats makes eating nutritious so easy! Great delivery service too." – <strong>Mark R.</strong></p>
+                <p>⭐️⭐️⭐️⭐️</p>
+            </div>
+            <div class="review">
+                <p>"Tasty meals and amazing variety! Definitely my go-to meal service." – <strong>Emma W.</strong></p>
+                <p>⭐️⭐️⭐️⭐️⭐️</p>
+            </div>
+        </div>
+
+        <h3>Leave a Review</h3>
+        <form id="review-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="rating">Your Rating:</label>
+            <div class="rating">
+                <span class="star" data-value="5">⭐</span>
+                <span class="star" data-value="4">⭐</span>
+                <span class="star" data-value="3">⭐</span>
+                <span class="star" data-value="2">⭐</span>
+                <span class="star" data-value="1">⭐</span>
+            </div>
+            <input type="hidden" id="rating" name="rating" value="5">
+
+            <label for="message">Your Review:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit Review</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Healthy Eats. All rights reserved.</p>
+        <p>Contact: support@healthyeats.com</p>
+    </footer>
+
+    <script src="reviews.js"></script>
+</body>
+</html>
