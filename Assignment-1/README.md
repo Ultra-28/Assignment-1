@@ -7,3 +7,5 @@ This is an interactive review page, that is updated whenever you publish a revie
 It is saved in a local dom storage so it isnt removed upon a refresh
 
 The other features include a service page with its subsections, a contact-us section(with a google map embedded into it), and a interactive page for an about us, with the images clickable to enlarge it below
+
+It is also mobile responsive, with its headers rearranging to a vertical arrangement to better fit the style arrangement

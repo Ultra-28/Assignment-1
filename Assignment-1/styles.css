@@ -591,3 +591,56 @@ footer {
 .cta-button:hover {
     background-color: #66b399;
 }
+
+/* ========== Responsive Design ========== */
+@media screen and (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    header nav ul li {
+        margin: 10px 0;
+    }
+    
+    #hero h2 {
+        font-size: 2rem;
+    }
+    
+    #services, #about, #reviews, #contact {
+        padding: 1rem;
+    }
+    
+    .services-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-box {
+        width: 90%;
+        text-align: center;
+    }
+
+    .reviews-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .service-box img {
+        width: 100%;
+        height: auto;
+    }
+
+    .cta-button, .learn-more {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+}
