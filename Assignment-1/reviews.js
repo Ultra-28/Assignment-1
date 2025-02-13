@@ -1,9 +1,29 @@
+// Star Rating System
+const stars = document.querySelectorAll(".star");
+const ratingInput = document.getElementById("rating");
+
+stars.forEach((star, index) => {
+    star.addEventListener("click", function() {
+        let selectedValue = index + 1;
+        ratingInput.value = selectedValue;
+
+        // Remove previous selections
+        stars.forEach(s => s.classList.remove("selected"));
+
+        // Highlight correct stars
+        for (let i = 0; i < selectedValue; i++) {
+            stars[i].classList.add("selected");
+        }
+    });
+});
+
+// Ensure previously selected rating is visible when submitting the review
 document.getElementById("review-form").addEventListener("submit", function(e) {
     e.preventDefault();
 
     // Get user input
     let name = document.getElementById("name").value;
-    let rating = document.getElementById("rating").value;
+    let rating = ratingInput.value;
     let message = document.getElementById("message").value;
 
     // Create review element
@@ -22,30 +42,6 @@ document.getElementById("review-form").addEventListener("submit", function(e) {
 
     // Reset form
     document.getElementById("review-form").reset();
-});
-
-// Load reviews from local storage on page load
-window.onload = function() {
-    let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-    let reviewContainer = document.getElementById("review-list");
-
-    reviews.forEach(({ name, rating, message }) => {
-        let newReview = document.createElement("div");
-        newReview.classList.add("review");
-        newReview.innerHTML = `<p>"${message}" – <strong>${name}</strong></p><p>${"⭐️".repeat(rating)}</p>`;
-        reviewContainer.appendChild(newReview);
-    });
-};
-
-// Star Rating System
-const stars = document.querySelectorAll(".star");
-stars.forEach(star => {
-    star.addEventListener("click", function() {
-        let value = this.getAttribute("data-value");
-        document.getElementById("rating").value = value;
-        stars.forEach(s => s.classList.remove("selected"));
-        for (let i = 0; i < value; i++) {
-            stars[i].classList.add("selected");
-        }
-    });
+    stars.forEach(s => s.classList.remove("selected")); // Reset selected stars
+    ratingInput.value = 5; // Reset rating to 5 stars by default
 });

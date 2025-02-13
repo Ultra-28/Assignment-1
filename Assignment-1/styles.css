@@ -203,9 +203,13 @@ footer {
 }
 
 .image-tab img {
-    width: 100%;
+    width: 120px; 
+    height: 120px; 
+    object-fit: cover; /* Ensures images fit well without distortion */
     border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
 }
+
 
 .image-tab:hover,
 .image-tab.active {
@@ -253,10 +257,86 @@ footer {
 }
 
 .service-box img {
-    width: 100%;
-    max-width: 250px;
+    width: 250px;
+    height: 250px;
     border-radius: 10px;
     margin-bottom: 1rem;
+}
+
+/* Seperate page for service details */
+
+#service-detail {
+    text-align: center;
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+#service-detail h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Image Styling */
+#service-detail img {
+    width: 300px;
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    display: block;
+    margin: 20px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a slight shadow */
+}
+
+/* Description Text */
+#service-detail p {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    color: #555;
+}
+
+/* Benefits List */
+#service-detail ul {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+#service-detail ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Custom Bullet Icon */
+#service-detail ul li::before {
+    content: "✔";
+    color: #78c2ad;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Back to Services Button */
+.learn-more {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #78c2ad;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.learn-more:hover {
+    background-color: #66b399;
 }
 
 
@@ -395,24 +475,24 @@ footer {
     font-size: 1rem;
 }
 
-/* Star Ratings */
-/* Star Ratings */
+/* Star Rating Styles */
 .rating {
     display: flex;
     justify-content: center;
-    gap: 5px;
+    gap: 10px;
     cursor: pointer;
 }
 
 .star {
-    font-size: 1.5rem;
+    font-size: 2rem; /* Increase size */
     color: gray;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, transform 0.2s;
 }
 
 .star:hover,
 .star.selected {
     color: gold;
+    transform: scale(1.2); /* Slight animation for better effect */
 }
 
 
